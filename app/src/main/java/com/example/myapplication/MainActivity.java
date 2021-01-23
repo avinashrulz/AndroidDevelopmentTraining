@@ -21,7 +21,14 @@ public class MainActivity extends AppCompatActivity {
 
     public void SwitchImage(View view){
         ImageView dogImageViewSwitcher = (ImageView) findViewById(R.id.dogImageView);
-        dogImageViewSwitcher.setImageResource(R.drawable.dogs2);
+        String backgroundImageName = String.valueOf(dogImageViewSwitcher.getTag());
+        if (backgroundImageName.equals("bg")) {
+            dogImageViewSwitcher.setImageResource(R.drawable.dogs2);
+            dogImageViewSwitcher.setTag("ag");
+        } else {
+            dogImageViewSwitcher.setImageResource(R.drawable.dogs);
+            dogImageViewSwitcher.setTag("bg");
+        }
     }
 
     @Override
